@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% block styles %}
+    {% endblock styles %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> <link
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>
+        {% block title %}
+        Document
+        {% endblock title %}
+    </title>
+</head>
+
+<body>
+
+    {% block header %}
+    {% include 'base/header.html' %}
+    {% endblock header %}
+
+    <div class="container mt-3 mb-3" id="container">
+        <div id="main">
+            {% block content %}
+            <h5> Contenido Base </h5>
+            {% endblock content %}
+        </div>
+    </div>
+
+    {% block footer %}
+    <footer id="footer">
+        {% include 'base/footer.html' %}
+    </footer>
+    {% endblock footer %}
+
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"> </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery-ui-i18n.min.js"></script>
+    {% block scripts %}
+
+    {% endblock scripts %}
+
+</body>
+
+</html>
